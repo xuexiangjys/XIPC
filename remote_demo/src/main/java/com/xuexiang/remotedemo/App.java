@@ -19,11 +19,6 @@ package com.xuexiang.remotedemo;
 import android.app.Application;
 import android.content.Context;
 
-import com.xuexiang.remotedemo.service.IComputeService;
-import com.xuexiang.remotedemo.service.IFileUtils;
-import com.xuexiang.remotedemo.service.ILoadingTask;
-import com.xuexiang.remotedemo.service.IUserManager;
-import com.xuexiang.remotedemo.service.LoadingCallback;
 import com.xuexiang.xipc.XIPC;
 import com.xuexiang.xpage.AppPageConfig;
 import com.xuexiang.xpage.PageConfig;
