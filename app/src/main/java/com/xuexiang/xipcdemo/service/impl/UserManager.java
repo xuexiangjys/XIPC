@@ -31,7 +31,6 @@ public class UserManager implements IUserManager {
 
     private static volatile UserManager sInstance = null;
 
-
     private String mUser;
 
     private UserManager() {

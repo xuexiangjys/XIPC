@@ -49,8 +49,18 @@ XIPC.register("com.xuexiang.remotedemo.service");
 
 ```
 
+## 混淆配置
 
-
+```
+# xipc
+-keep @com.xuexiang.xipc.annotation.* class * {*;}
+-keep class * {
+    @com.xuexiang.xipc.annotation.* <fields>;
+}
+-keepclassmembers class * {
+    @com.xuexiang.xipc.annotation.* <methods>;
+}
+```
 
 
 
