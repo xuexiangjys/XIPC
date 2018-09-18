@@ -19,7 +19,7 @@ package com.xuexiang.xipc.core.wrapper;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.MethodName;
 import com.xuexiang.xipc.util.TypeUtils;
 
 import java.lang.reflect.Method;
@@ -64,7 +64,7 @@ public class MethodWrapper extends BaseWrapper implements Parcelable {
      * @param method
      */
     public MethodWrapper(Method method) {
-        setName(!method.isAnnotationPresent(MethodId.class), TypeUtils.getMethodId(method));
+        setName(!method.isAnnotationPresent(MethodName.class), TypeUtils.getMethodId(method));
         Class<?>[] classes = method.getParameterTypes();
         if (classes == null) {
             classes = new Class<?>[0];

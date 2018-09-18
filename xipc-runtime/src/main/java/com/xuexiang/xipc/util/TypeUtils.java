@@ -24,9 +24,9 @@ import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.GetInstance;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.Singleton;
+import com.xuexiang.xipc.annotation.MethodName;
 import com.xuexiang.xipc.annotation.WithinProcess;
 import com.xuexiang.xipc.exception.ErrorCodes;
 import com.xuexiang.xipc.exception.IPCException;
@@ -70,9 +70,9 @@ public final class TypeUtils {
      * @return
      */
     public static String getClassId(Class<?> clazz) {
-        ClassId classId = clazz.getAnnotation(ClassId.class);
-        if (classId != null) {
-            return classId.value();
+        ClassName className = clazz.getAnnotation(ClassName.class);
+        if (className != null) {
+            return className.value();
         } else {
             return clazz.getName();
         }
@@ -85,9 +85,9 @@ public final class TypeUtils {
      * @return
      */
     public static String getMethodId(Method method) {
-        MethodId methodId = method.getAnnotation(MethodId.class);
-        if (methodId != null) {
-            return methodId.value();
+        MethodName methodName = method.getAnnotation(MethodName.class);
+        if (methodName != null) {
+            return methodName.value();
         } else {
             return method.getName() + '(' + getMethodParameters(method.getParameterTypes()) + ')';
         }
@@ -198,7 +198,7 @@ public final class TypeUtils {
         for (Method method : methods) {
             String tmpName = method.getName();
             if (methodName.equals("") && (tmpName.equals("getInstance")
-                    || method.isAnnotationPresent(GetInstance.class))
+                    || method.isAnnotationPresent(Singleton.class))
                     || !methodName.equals("") && tmpName.equals(methodName)) {
                 if (classAssignable(method.getParameterTypes(), parameterTypes)) {
                     if (result == null) {

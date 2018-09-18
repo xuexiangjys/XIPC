@@ -19,7 +19,7 @@ package com.xuexiang.xipc.core.wrapper;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.xuexiang.xipc.annotation.ClassId;
+import com.xuexiang.xipc.annotation.ClassName;
 import com.xuexiang.xipc.util.TimeStampGenerator;
 import com.xuexiang.xipc.util.TypeUtils;
 
@@ -92,7 +92,7 @@ public class ObjectWrapper extends BaseWrapper implements Parcelable {
      * @param type  对象的类型
      */
     public ObjectWrapper(Class<?> clazz, int type) {
-        setName(!clazz.isAnnotationPresent(ClassId.class), TypeUtils.getClassId(clazz));
+        setName(!clazz.isAnnotationPresent(ClassName.class), TypeUtils.getClassId(clazz));
         mClass = clazz;
         mTimeStamp = TimeStampGenerator.getTimeStamp();
         mType = type;

@@ -16,8 +16,9 @@
 
 package com.xuexiang.xipcdemo.service.impl;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
+import com.xuexiang.xipc.annotation.Singleton;
 import com.xuexiang.xipcdemo.service.IUserManager;
 
 /**
@@ -26,7 +27,7 @@ import com.xuexiang.xipcdemo.service.IUserManager;
  * @author xuexiang
  * @since 2018/9/18 上午9:56
  */
-@ClassId("UserManager")
+@ClassName("UserManager")
 public class UserManager implements IUserManager {
 
     private static volatile UserManager sInstance = null;
@@ -37,6 +38,7 @@ public class UserManager implements IUserManager {
         mUser = "我的名字叫:XIPC";
     }
 
+    @Singleton
     public static UserManager getInstance() {
         if (sInstance == null) {
             synchronized (UserManager.class) {
@@ -48,7 +50,7 @@ public class UserManager implements IUserManager {
         return sInstance;
     }
 
-    @MethodId("getUser")
+    @MethodName("getUser")
     @Override
     public String getUser() {
         return mUser;

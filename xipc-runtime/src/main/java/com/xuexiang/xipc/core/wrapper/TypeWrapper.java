@@ -19,7 +19,7 @@ package com.xuexiang.xipc.core.wrapper;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.xuexiang.xipc.annotation.ClassId;
+import com.xuexiang.xipc.annotation.ClassName;
 import com.xuexiang.xipc.util.TypeUtils;
 
 /**
@@ -51,7 +51,7 @@ public class TypeWrapper extends BaseWrapper implements Parcelable {
      * @param clazz
      */
     public TypeWrapper(Class<?> clazz) {
-        setName(!clazz.isAnnotationPresent(ClassId.class), TypeUtils.getClassId(clazz));
+        setName(!clazz.isAnnotationPresent(ClassName.class), TypeUtils.getClassId(clazz));
     }
 
     @Override

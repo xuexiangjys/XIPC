@@ -16,8 +16,8 @@
 
 package com.xuexiang.xipcdemo.service.impl;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
 import com.xuexiang.xipcdemo.service.IComputeService;
 
 /**
@@ -25,11 +25,11 @@ import com.xuexiang.xipcdemo.service.IComputeService;
  * @author xuexiang
  * @since 2018/9/18 上午10:33
  */
-@ClassId("ComputeService")
+@ClassName("ComputeService")
 public class ComputeService implements IComputeService {
 
     @Override
-    @MethodId("calculate")
+    @MethodName("calculate")
     public float calculate(float value1, String symbol, float value2) {
         float result;
         switch(symbol) {

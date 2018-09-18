@@ -18,7 +18,7 @@ package com.xuexiang.remotedemo.service;
 
 import android.content.Context;
 
-import com.xuexiang.xipc.annotation.ClassId;
+import com.xuexiang.xipc.annotation.ClassName;
 
 /**
  * 工具类测试
@@ -26,7 +26,7 @@ import com.xuexiang.xipc.annotation.ClassId;
  * @author xuexiang
  * @since 2018/9/18 上午9:59
  */
-@ClassId("FileUtils")
+@ClassName("FileUtils")
 public interface IFileUtils {
 
     String getExternalCacheDir(Context context);

@@ -16,7 +16,7 @@
 
 package com.xuexiang.remotedemo.service;
 
-import com.xuexiang.xipc.annotation.ClassId;
+import com.xuexiang.xipc.annotation.ClassName;
 
 /**
  * 定义的回调接口
@@ -24,7 +24,7 @@ import com.xuexiang.xipc.annotation.ClassId;
  * @author xuexiang
  * @since 2018/9/18 上午9:51
  */
-@ClassId("LoadingCallback")
+@ClassName("LoadingCallback")
 public interface LoadingCallback {
 
     void callback(int progress);

@@ -16,8 +16,8 @@
 
 package com.xuexiang.remotedemo.service;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
 
 /**
  * 服务接口测试
@@ -25,7 +25,7 @@ import com.xuexiang.xipc.annotation.MethodId;
  * @author xuexiang
  * @since 2018/9/18 上午10:26
  */
-@ClassId("ComputeService")
+@ClassName("ComputeService")
 public interface IComputeService {
 
     /**
@@ -36,6 +36,6 @@ public interface IComputeService {
      * @param value2 值2
      * @return
      */
-    @MethodId("calculate")
+    @MethodName("calculate")
     float calculate(float value1, String symbol, float value2);
 }

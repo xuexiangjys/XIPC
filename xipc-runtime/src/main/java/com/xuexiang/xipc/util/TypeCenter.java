@@ -18,8 +18,8 @@ package com.xuexiang.xipc.util;
 
 import android.text.TextUtils;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
 import com.xuexiang.xipc.exception.ErrorCodes;
 import com.xuexiang.xipc.exception.IPCException;
 import com.xuexiang.xipc.core.wrapper.BaseWrapper;
@@ -87,7 +87,7 @@ public class TypeCenter {
      * @param clazz
      */
     private void registerClass(Class<?> clazz) {
-        ClassId classId = clazz.getAnnotation(ClassId.class);
+        ClassName classId = clazz.getAnnotation(ClassName.class);
         if (classId == null) {
             String className = clazz.getName();
             mRawClasses.putIfAbsent(className, clazz);
@@ -105,8 +105,8 @@ public class TypeCenter {
     private void registerMethod(Class<?> clazz) {
         Method[] methods = clazz.getMethods();
         for (Method method : methods) {
-            MethodId methodId = method.getAnnotation(MethodId.class);
-            if (methodId == null) {
+            MethodName methodName = method.getAnnotation(MethodName.class);
+            if (methodName == null) {
                 mRawMethods.putIfAbsent(clazz, new ConcurrentHashMap<String, Method>());
                 ConcurrentHashMap<String, Method> map = mRawMethods.get(clazz);
                 String key = TypeUtils.getMethodId(method);
@@ -214,7 +214,7 @@ public class TypeCenter {
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                         throw new IPCException(ErrorCodes.CLASS_NOT_FOUND,
-                                "Cannot find class " + name + ". Classes without ClassId annotation on it "
+                                "Cannot find class " + name + ". Classes without ClassName annotation on it "
                                         + "should be located at the same package and have the same name, "
                                         + "EVEN IF the source code has been obfuscated by Proguard.");
                     }
@@ -227,7 +227,7 @@ public class TypeCenter {
             Class<?> clazz = mAnnotatedClasses.get(name);
             if (clazz == null) {
                 throw new IPCException(ErrorCodes.CLASS_NOT_FOUND,
-                        "Cannot find class with ClassId annotation on it. ClassId = " + name
+                        "Cannot find class with ClassName annotation on it. ClassName = " + name
                                 + ". Please add the same annotation on the corresponding class in the remote process"
                                 + " and register it. Have you forgotten to register the class?");
             }

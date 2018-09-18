@@ -16,8 +16,8 @@
 
 package com.xuexiang.remotedemo.service;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
 import com.xuexiang.xipc.annotation.WeakRef;
 
 /**
@@ -26,9 +26,9 @@ import com.xuexiang.xipc.annotation.WeakRef;
  * @author xuexiang
  * @since 2018/9/18 上午9:58
  */
-@ClassId("LoadingTask")
+@ClassName("LoadingTask")
 public interface ILoadingTask {
 
-    @MethodId("start")
+    @MethodName("start")
     void start(@WeakRef LoadingCallback loadingCallback);
 }

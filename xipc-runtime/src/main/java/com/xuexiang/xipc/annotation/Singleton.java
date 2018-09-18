@@ -22,16 +22,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 类的标识、映射注解，用于查找指定的类
+ * 标识获取单例方法的注解
  *
  * @author xuexiang
- * @since 2018/9/14 下午3:29
+ * @since 2018/9/14 下午3:31
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ClassId {
-    /**
-     * @return 类名，必填
-     */
-    String value();
+public @interface Singleton {
+
 }

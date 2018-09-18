@@ -19,7 +19,7 @@ package com.xuexiang.xipc.core.wrapper;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.xuexiang.xipc.annotation.ClassId;
+import com.xuexiang.xipc.annotation.ClassName;
 import com.xuexiang.xipc.exception.IPCException;
 import com.xuexiang.xipc.util.SerializeUtils;
 import com.xuexiang.xipc.util.TypeUtils;
@@ -69,7 +69,7 @@ public class ParameterWrapper extends BaseWrapper implements Parcelable {
      */
     public ParameterWrapper(Class<?> clazz, Object object) throws IPCException {
         mClass = clazz;
-        setName(!clazz.isAnnotationPresent(ClassId.class), TypeUtils.getClassId(clazz));
+        setName(!clazz.isAnnotationPresent(ClassName.class), TypeUtils.getClassId(clazz));
         mData = SerializeUtils.encode(object);
     }
 
@@ -87,7 +87,7 @@ public class ParameterWrapper extends BaseWrapper implements Parcelable {
         } else {
             Class<?> clazz = object.getClass();
             mClass = clazz;
-            setName(!clazz.isAnnotationPresent(ClassId.class), TypeUtils.getClassId(clazz));
+            setName(!clazz.isAnnotationPresent(ClassName.class), TypeUtils.getClassId(clazz));
             mData = SerializeUtils.encode(object);
         }
     }

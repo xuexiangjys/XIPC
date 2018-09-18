@@ -22,13 +22,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 标识获取单例方法的注解
- *
- * @author xuexiang
- * @since 2018/9/14 下午3:31
+ * 标识方法的注解，用于查找指定的方法
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface GetInstance {
-
+public @interface MethodName {
+    /**
+     * @return 方法名，必填
+     */
+    String value();
 }

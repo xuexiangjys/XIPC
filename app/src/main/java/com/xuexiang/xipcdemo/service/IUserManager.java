@@ -16,8 +16,8 @@
 
 package com.xuexiang.xipcdemo.service;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
 
 /**
  * 测试单例的获取
@@ -25,10 +25,10 @@ import com.xuexiang.xipc.annotation.MethodId;
  * @author xuexiang
  * @since 2018/9/18 上午9:56
  */
-@ClassId("UserManager")
+@ClassName("UserManager")
 public interface IUserManager {
 
-    @MethodId("getUser")
+    @MethodName("getUser")
     String getUser();
 
 }

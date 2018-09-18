@@ -18,7 +18,7 @@ package com.xuexiang.xipcdemo.service.impl;
 
 import android.content.Context;
 
-import com.xuexiang.xipc.annotation.ClassId;
+import com.xuexiang.xipc.annotation.ClassName;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ import java.io.IOException;
  * @author xuexiang
  * @since 2018/9/18 上午10:00
  */
-@ClassId("FileUtils")
+@ClassName("FileUtils")
 public class FileUtils {
 
     public static String getExternalCacheDir(Context context) {

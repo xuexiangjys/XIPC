@@ -16,8 +16,8 @@
 
 package com.xuexiang.xipcdemo.service.impl;
 
-import com.xuexiang.xipc.annotation.ClassId;
-import com.xuexiang.xipc.annotation.MethodId;
+import com.xuexiang.xipc.annotation.ClassName;
+import com.xuexiang.xipc.annotation.MethodName;
 import com.xuexiang.xipcdemo.service.ILoadingTask;
 import com.xuexiang.xipcdemo.service.LoadingCallback;
 
@@ -30,14 +30,14 @@ import java.util.TimerTask;
  * @author xuexiang
  * @since 2018/9/18 上午9:50
  */
-@ClassId("LoadingTask")
+@ClassName("LoadingTask")
 public class LoadingTask implements ILoadingTask {
 
     public LoadingTask(String url) {
 
     }
 
-    @MethodId("start")
+    @MethodName("start")
     @Override
     public void start(final LoadingCallback loadingCallback) {
         final Timer timer = new Timer();
