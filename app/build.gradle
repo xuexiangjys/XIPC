@@ -72,5 +72,6 @@ dependencies {
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 
 
-    implementation project(':xipc-runtime')
+    implementation 'com.github.xuexiangjys:XIPC:1.0.0'
+//    implementation project(':xipc-runtime')
 }

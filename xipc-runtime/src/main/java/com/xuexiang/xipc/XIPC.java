@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 
 import com.xuexiang.xipc.core.channel.Channel;
 import com.xuexiang.xipc.core.channel.IPCInvocationHandler;
+import com.xuexiang.xipc.core.channel.IPCListener;
 import com.xuexiang.xipc.core.channel.IPCService;
 import com.xuexiang.xipc.core.entity.Reply;
 import com.xuexiang.xipc.core.sender.Sender;
@@ -285,6 +286,7 @@ public class XIPC {
     }
 
     //=========获取工具类==========//
+
     /**
      * 获取工具类
      *
@@ -343,5 +345,15 @@ public class XIPC {
     public static boolean isDebug() {
         return IPCLog.isDebug();
     }
+
+    /**
+     * 设置IPC通信监听
+     *
+     * @param listener
+     */
+    public void setIPCListener(IPCListener listener) {
+        CHANNEL.setIPCListener(listener);
+    }
+
 
 }

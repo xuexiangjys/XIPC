@@ -54,14 +54,25 @@ public class Channel {
 
     private static volatile Channel sInstance = null;
 
+    /**
+     * IPC通信服务
+     */
     private final ConcurrentHashMap<Class<? extends IPCService>, IIPCService> mIPCServices = new ConcurrentHashMap<>();
-
-    private final ConcurrentHashMap<Class<? extends IPCService>, IPCServiceConnection> mIPCServiceConnections = new ConcurrentHashMap<Class<? extends IPCService>, IPCServiceConnection>();
-
-    private final ConcurrentHashMap<Class<? extends IPCService>, Boolean> mBindings = new ConcurrentHashMap<Class<? extends IPCService>, Boolean>();
-
-    private final ConcurrentHashMap<Class<? extends IPCService>, Boolean> mBounds = new ConcurrentHashMap<Class<? extends IPCService>, Boolean>();
-
+    /**
+     * IPC通信服务连接池
+     */
+    private final ConcurrentHashMap<Class<? extends IPCService>, IPCServiceConnection> mIPCServiceConnections = new ConcurrentHashMap<>();
+    /**
+     * 绑定中的服务
+     */
+    private final ConcurrentHashMap<Class<? extends IPCService>, Boolean> mBindings = new ConcurrentHashMap<>();
+    /**
+     * 已绑定的服务
+     */
+    private final ConcurrentHashMap<Class<? extends IPCService>, Boolean> mBounds = new ConcurrentHashMap<>();
+    /**
+     * IPC通信监听
+     */
     private IPCListener mListener = null;
 
     private Handler mUiHandler = new Handler(Looper.getMainLooper());
@@ -183,6 +194,13 @@ public class Channel {
         return sInstance;
     }
 
+    /**
+     * 绑定IPC通信服务
+     *
+     * @param context
+     * @param packageName
+     * @param service
+     */
     public void bind(Context context, String packageName, Class<? extends IPCService> service) {
         IPCServiceConnection connection;
         synchronized (this) {
@@ -207,6 +225,12 @@ public class Channel {
         context.bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 
+    /**
+     * 解绑IPC通信服务
+     *
+     * @param context
+     * @param service
+     */
     public void unbind(Context context, Class<? extends IPCService> service) {
         synchronized (this) {
             Boolean bound = mBounds.get(service);
@@ -220,6 +244,13 @@ public class Channel {
         }
     }
 
+    /**
+     * 执行IPC通信请求
+     *
+     * @param service
+     * @param mail
+     * @return
+     */
     public Reply send(Class<? extends IPCService> service, Mail mail) {
         IIPCService iipcService = mIPCServices.get(service);
         try {
@@ -234,6 +265,12 @@ public class Channel {
         }
     }
 
+    /**
+     * 资源回收
+     *
+     * @param service
+     * @param timeStamps
+     */
     public void gc(Class<? extends IPCService> service, List<Long> timeStamps) {
         IIPCService iipcService = mIPCServices.get(service);
         if (iipcService == null) {
@@ -252,6 +289,10 @@ public class Channel {
         return bound != null && bound;
     }
 
+    /**
+     * 设置IPC通信监听
+     * @param listener
+     */
     public void setIPCListener(IPCListener listener) {
         mListener = listener;
     }
@@ -261,6 +302,9 @@ public class Channel {
         return iipcService != null && iipcService.asBinder().pingBinder();
     }
 
+    /**
+     * IPC通信连接
+     */
     private class IPCServiceConnection implements ServiceConnection {
 
         private Class<? extends IPCService> mClass;
