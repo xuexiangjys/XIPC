@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 /**
- *
+ * 处理工具类方法的执行
  *
  * @author xuexiang
  * @since 2018/9/17 下午6:49

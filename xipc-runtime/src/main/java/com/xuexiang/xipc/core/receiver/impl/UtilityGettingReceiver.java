@@ -24,6 +24,8 @@ import com.xuexiang.xipc.exception.IPCException;
 import com.xuexiang.xipc.util.TypeUtils;
 
 /**
+ * 处理工具类的获取
+ *
  * @author xuexiang
  * @since 2018/9/17 下午6:51
  */

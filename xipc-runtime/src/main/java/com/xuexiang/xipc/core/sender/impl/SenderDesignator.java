@@ -20,14 +20,32 @@ import com.xuexiang.xipc.core.channel.IPCService;
 import com.xuexiang.xipc.core.sender.Sender;
 import com.xuexiang.xipc.core.wrapper.ObjectWrapper;
 
+/**
+ * 请求动作的构建器
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:35
+ */
 public class SenderDesignator {
 
+    /**
+     * 新建实例，服务发现
+     */
     public static final int TYPE_NEW_INSTANCE = 0;
 
+    /**
+     * 获取单例
+     */
     public static final int TYPE_GET_INSTANCE = 1;
 
+    /**
+     * 获取工具类
+     */
     public static final int TYPE_GET_UTILITY_CLASS = 2;
 
+    /**
+     * 执行对象的方法
+     */
     public static final int TYPE_INVOKE_METHOD = 3;
 
     public static Sender getPostOffice(Class<? extends IPCService> service, int type, ObjectWrapper object) {

@@ -24,6 +24,12 @@ import com.xuexiang.xipc.core.wrapper.ParameterWrapper;
 
 import java.lang.reflect.Method;
 
+/**
+ * 请求执行对象的方法
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:33
+ */
 public class ObjectSender extends Sender {
 
     public ObjectSender(Class<? extends IPCService> service, ObjectWrapper object) {

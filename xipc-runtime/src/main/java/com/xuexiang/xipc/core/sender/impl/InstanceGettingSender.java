@@ -27,6 +27,12 @@ import com.xuexiang.xipc.util.SerializeUtils;
 
 import java.lang.reflect.Method;
 
+/**
+ * 请求获取单例
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:38
+ */
 public class InstanceGettingSender extends Sender {
 
     public InstanceGettingSender(Class<? extends IPCService> service, ObjectWrapper object) {
@@ -37,9 +43,7 @@ public class InstanceGettingSender extends Sender {
     protected void setParameterWrappers(ParameterWrapper[] parameterWrappers) {
         int length = parameterWrappers.length;
         ParameterWrapper[] tmp = new ParameterWrapper[length - 1];
-        for (int i = 1; i < length; ++i) {
-            tmp[i - 1] = parameterWrappers[i];
-        }
+        System.arraycopy(parameterWrappers, 1, tmp, 0, length - 1);
         super.setParameterWrappers(tmp);
     }
 

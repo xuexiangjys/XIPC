@@ -25,6 +25,12 @@ import com.xuexiang.xipc.core.wrapper.ObjectWrapper;
 import com.xuexiang.xipc.exception.ErrorCodes;
 import com.xuexiang.xipc.exception.IPCException;
 
+/**
+ * 接收器类型构建器，处理相应的请求动作
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:30
+ */
 public class ReceiverDesignator {
 
     public static Receiver getReceiver(ObjectWrapper objectWrapper) throws IPCException {

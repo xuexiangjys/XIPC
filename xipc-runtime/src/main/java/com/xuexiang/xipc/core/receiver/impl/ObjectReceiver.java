@@ -27,6 +27,12 @@ import com.xuexiang.xipc.util.TypeUtils;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * 处理对象方法的执行
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:25
+ */
 public class ObjectReceiver extends Receiver {
 
     private Method mMethod;

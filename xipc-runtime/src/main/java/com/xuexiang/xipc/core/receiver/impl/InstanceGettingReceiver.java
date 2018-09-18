@@ -28,6 +28,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
+/**
+ * 处理单例的获取
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:25
+ */
 public class InstanceGettingReceiver extends Receiver {
 
     private Method mMethod;

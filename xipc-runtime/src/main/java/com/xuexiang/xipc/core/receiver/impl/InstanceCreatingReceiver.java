@@ -27,6 +27,12 @@ import com.xuexiang.xipc.util.TypeUtils;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * 处理实例的创建
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:22
+ */
 public class InstanceCreatingReceiver extends Receiver {
 
     private Class<?> mObjectClass;

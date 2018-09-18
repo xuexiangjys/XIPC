@@ -24,6 +24,12 @@ import com.xuexiang.xipc.core.wrapper.ParameterWrapper;
 
 import java.lang.reflect.Method;
 
+/**
+ * 请求获取工具类
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:37
+ */
 public class UtilityGettingSender extends Sender {
 
     public UtilityGettingSender(Class<? extends IPCService> service, ObjectWrapper object) {

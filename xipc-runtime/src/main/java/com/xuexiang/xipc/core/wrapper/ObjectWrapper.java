@@ -32,27 +32,27 @@ import com.xuexiang.xipc.util.TypeUtils;
 public class ObjectWrapper extends BaseWrapper implements Parcelable {
 
     /**
-     * 请求新创建对象的类型【用于新建实例对象】
+     * 请求创建新的实例对象【注册服务】
      */
     public static final int TYPE_OBJECT_TO_NEW = 0;
 
     /**
-     * 请求获取对象的类型【用于获取单例】
+     * 请求获取单例
      */
     public static final int TYPE_OBJECT_TO_GET = 1;
 
     /**
-     * 请求类获取【用于获取工具类的方法】
+     * 请求获取工具类
      */
     public static final int TYPE_CLASS_TO_GET = 2;
 
     /**
-     * 对象的返回
+     * 处理对象方法的执行
      */
     public static final int TYPE_OBJECT = 3;
 
     /**
-     * 类的返回
+     * 处理工具类(静态)方法的执行
      */
     public static final int TYPE_CLASS = 4;
 

@@ -24,6 +24,12 @@ import com.xuexiang.xipc.core.wrapper.ParameterWrapper;
 
 import java.lang.reflect.Method;
 
+/**
+ * 请求创建实例（服务发现）
+ *
+ * @author xuexiang
+ * @since 2018/9/18 下午3:38
+ */
 public class InstanceCreatingSender extends Sender {
 
     private Class<?>[] mConstructorParameterTypes;
