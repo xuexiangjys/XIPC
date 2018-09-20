@@ -173,6 +173,15 @@ public class XIPC {
         return CHANNEL.isConnected(service);
     }
 
+    /**
+     * 设置IPC通信监听
+     *
+     * @param listener
+     */
+    public void setIPCListener(IPCListener listener) {
+        CHANNEL.setIPCListener(listener);
+    }
+
     //====================3.服务发现===========================//
 
     private static <T> T getProxy(Class<? extends IPCService> service, ObjectWrapper object) {
@@ -345,15 +354,5 @@ public class XIPC {
     public static boolean isDebug() {
         return IPCLog.isDebug();
     }
-
-    /**
-     * 设置IPC通信监听
-     *
-     * @param listener
-     */
-    public void setIPCListener(IPCListener listener) {
-        CHANNEL.setIPCListener(listener);
-    }
-
 
 }
