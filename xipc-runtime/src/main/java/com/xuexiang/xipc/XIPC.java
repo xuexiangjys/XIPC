@@ -178,7 +178,7 @@ public class XIPC {
      *
      * @param listener
      */
-    public void setIPCListener(IPCListener listener) {
+    public static void setIPCListener(IPCListener listener) {
         CHANNEL.setIPCListener(listener);
     }
 

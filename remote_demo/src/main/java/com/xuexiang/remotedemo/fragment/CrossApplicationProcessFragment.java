@@ -27,6 +27,8 @@ import com.xuexiang.remotedemo.service.IUserManager;
 import com.xuexiang.remotedemo.service.LoadingCallback;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xipc.XIPC;
+import com.xuexiang.xipc.core.channel.IPCListener;
+import com.xuexiang.xipc.core.channel.IPCService;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xutil.tip.ToastUtils;
@@ -48,6 +50,12 @@ public class CrossApplicationProcessFragment extends XPageFragment {
     protected void initArgs() {
         super.initArgs();
         XIPC.connectApp(getContext(), "com.xuexiang.xipcdemo");
+        XIPC.setIPCListener(new IPCListener() {
+            @Override
+            public void onIPCConnected(Class<? extends IPCService> service) {
+                ToastUtils.toast("IPC服务已绑定！");
+            }
+        });
     }
 
     @Override
