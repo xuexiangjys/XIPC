@@ -179,6 +179,8 @@ XIPC.disconnect(getContext());
 
 * 如果接口和类里面对应的方法有相同的名字，那么也没有必要在方法上加上`@MethodName`注解，同样注意ProGuard的使用后接口内的方法名字必须仍然和类内的对应方法名字相同。
 
+* 如果接口和实现类中有任意一个使用了`@ClassName`和`@MethodName`修饰，那么另一个也一定要使用相同的`@ClassName`和`@MethodName`修饰，否则将报错。
+
 * 假设进程B需要访问进程A, 如果进程A使用了`@ClassName`注解标识的类，那么进程B也要对其对应的接口上加上相同的@ClassName注解，并且进程A在进程B访问该接口之前，必须要注册。 否则进程B使用`XIPC.getService()`、`XIPC.getInstance()`或`XIPC.getUtilityClass()`访问进程A时，XIPC在进程A中找不到匹配的类。
 
 * 所有注册的接口类不可以是匿名类和局部类。
