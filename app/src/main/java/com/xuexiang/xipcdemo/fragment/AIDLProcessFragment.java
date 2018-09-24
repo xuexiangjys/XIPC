@@ -65,7 +65,7 @@ public class AIDLProcessFragment extends XPageFragment {
     @OnClick(R.id.btn_compute)
     public void onViewClicked() {
         try {
-            ToastUtils.toast("3*4=" + mICompute.calculate(3 , "*", 4));
+            ToastUtils.toast("3+4=" + mICompute.calculate(3 , "+", 4));
         } catch (RemoteException e) {
             e.printStackTrace();
         }

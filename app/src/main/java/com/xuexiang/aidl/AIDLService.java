@@ -19,7 +19,6 @@ package com.xuexiang.aidl;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
@@ -32,8 +31,6 @@ import com.xuexiang.xipcdemo.service.impl.ComputeService;
  * @since 2018/9/24 下午1:49
  */
 public class AIDLService extends Service {
-
-    private RemoteCallbackList<ILoadingCallback> mRemoteCallbackList = new RemoteCallbackList<>();
 
     @Nullable
     @Override
