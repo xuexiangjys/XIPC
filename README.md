@@ -12,9 +12,9 @@
 
 ### apk下载
 
-[![远程服务应用](https://img.shields.io/badge/downloads-1.5M-blue.svg)](https://github.com/xuexiangjys/XIPC/blob/master/apk/xipc_demo_1.0.apk)
+[![远程服务应用](https://img.shields.io/badge/远程服务应用-1.5M-blue.svg)](https://github.com/xuexiangjys/XIPC/blob/master/apk/xipc_demo_1.0.apk)
 
-[![调用服务应用](https://img.shields.io/badge/downloads-1.5M-blue.svg)](https://github.com/xuexiangjys/XIPC/blob/master/apk/remote_demo_1.0.apk)
+[![调用服务应用](https://img.shields.io/badge/调用服务应用-1.5M-blue.svg)](https://github.com/xuexiangjys/XIPC/blob/master/apk/remote_demo_1.0.apk)
 
 ## 特征
 
