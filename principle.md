@@ -54,7 +54,39 @@ public synchronized final Reply send(Method method, Object[] parameters) throws 
 }
 ```
 
-(2)IPCService根据`Mail`中描述的请求类型，生成指定的`Receiver`来处理。
+(2)IPCService定义了通用的AIDL接口。
+
+```
+public interface IIPCService extends IInterface {
+    /**
+     * 发送请求
+     *
+     * @param mail
+     * @return
+     * @throws RemoteException
+     */
+    Reply send(Mail mail) throws RemoteException;
+
+    /**
+     * 注册回调
+     *
+     * @param callback
+     * @param pid
+     * @throws RemoteException
+     */
+    void register(IIPCServiceCallback callback, int pid) throws RemoteException;
+
+    /**
+     * 资源回收
+     *
+     * @param timeStamps
+     * @throws RemoteException
+     */
+    void gc(List<Long> timeStamps) throws RemoteException;
+}
+```
+
+IPCService根据`Mail`中描述的请求类型，生成指定的`Receiver`来处理。
 
 ```
 private final IIPCService.Stub mBinder = new IIPCService.Stub() {

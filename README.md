@@ -36,7 +36,7 @@
 
 * 进程间垃圾回收
 
-[详细实现原理请点击查看]()
+[详细实现原理请点击查看](https://github.com/xuexiangjys/XIPC/blob/master/principle.md)
 
 ## 如何使用
 
