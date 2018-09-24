@@ -7,8 +7,9 @@
 
 [![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)
 
-
 ## 演示（请star支持)
+
+![](https://github.com/xuexiangjys/XIPC/blob/master/img/demo.gif)
 
 ### apk下载
 
