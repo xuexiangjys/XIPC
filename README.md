@@ -1,7 +1,7 @@
 # XIPC
 [![xipc][xipcsvg]][xipc]  [![api][apisvg]][api]
 
-一个Android通用的IPC(进程通信)框架
+一个Android通用的IPC(进程通信)框架。该项目主要是模仿饿了么开源项目Hermes的设计进行的自我理解改写。
 
 ## 关于我
 
