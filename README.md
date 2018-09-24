@@ -7,6 +7,37 @@
 
 [![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)
 
+## 特征
+
+* 支持自定义服务接口实现进程通信，无需定义AIDL接口。
+
+* 支持自定义接口服务（服务发现）、获取单例和获取工具类方法。
+
+* 支持进程通信的接口回调。
+
+* 支持接口回调的线程控制。
+
+* 拥有垃圾回收机制，防止接口回调内存泄漏。
+
+* 支持跨进程和跨应用通信。
+
+
+## 实现原理
+
+该框架主要使用以下技术实现：
+
+* 注解反射
+
+* 动态代理
+
+* AIDL
+
+* 服务绑定
+
+* 进程间垃圾回收
+
+[详细实现原理请点击查看]()
+
 ## 如何使用
 
 1.先在项目根目录的 build.gradle 的 repositories 添加:
@@ -25,7 +56,7 @@ allprojects {
 ```
 dependencies {
   ...
-  implementation 'com.github.xuexiangjys:XIPC:1.0.0'
+  implementation 'com.github.xuexiangjys:XIPC:1.0.1'
 }
 ```
 
@@ -48,7 +79,7 @@ XIPC.register("com.xuexiang.remotedemo.service");
 
 ```
 
-------
+---
 
 ## 如何实现跨应用通信
 
@@ -241,7 +272,7 @@ https://github.com/Xiaofei-it/Hermes
 
 ![](https://github.com/xuexiangjys/XPage/blob/master/img/qq_group.jpg)
 
-[xipcsvg]: https://img.shields.io/badge/XIPC-v1.0.0-brightgreen.svg
+[xipcsvg]: https://img.shields.io/badge/XIPC-v1.0.1-brightgreen.svg
 [xipc]: https://github.com/xuexiangjys/XIPC
 [apisvg]: https://img.shields.io/badge/API-14+-brightgreen.svg
 [api]: https://android-arsenal.com/api?level=14
