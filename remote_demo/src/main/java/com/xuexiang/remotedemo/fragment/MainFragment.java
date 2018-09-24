@@ -35,7 +35,8 @@ public class MainFragment extends XPageContainerListFragment {
     @Override
     protected Class[] getPagesClasses() {
         return new Class[]{
-                CrossApplicationProcessFragment.class
+                CrossApplicationProcessFragment.class,
+                AIDLProcessFragment.class
         };
     }
 

@@ -19,12 +19,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.SecondProcessActivity"
-            android:process=":g"/>
+        <activity
+            android:name=".activity.SecondProcessActivity"
+            android:process=":g" />
 
+        <!--这个是IPC服务-->
         <service
             android:name="com.xuexiang.xipc.core.channel.IPCService$IPCService0"
             android:exported="true" />
+
+
+        <!--这个是AIDL服务-->
+        <service
+            android:name="com.xuexiang.aidl.AIDLService"
+            android:exported="true"/>
 
     </application>
 

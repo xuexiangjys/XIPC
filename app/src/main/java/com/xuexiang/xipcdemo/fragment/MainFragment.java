@@ -25,6 +25,7 @@ public class MainFragment extends XPageSimpleListFragment {
     protected List<String> initSimpleData(List<String> lists) {
         lists.add("同进程通信");
         lists.add("不同进程间的通信");
+        lists.add("原生AIDL进程间通信");
         return lists;
     }
 
@@ -42,6 +43,9 @@ public class MainFragment extends XPageSimpleListFragment {
                 break;
             case 1:
                 ActivityUtils.startActivity(SecondProcessActivity.class);
+                break;
+            case 2:
+                openPage(AIDLProcessFragment.class);
                 break;
             default:
                 break;
