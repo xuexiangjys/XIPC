@@ -7,6 +7,15 @@
 
 [![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)
 
+
+## 演示（请star支持)
+
+### apk下载
+
+[![远程服务应用](https://img.shields.io/badge/downloads-1.5M-blue.svg)](https://github.com/xuexiangjys/XIPC/blob/master/apk/xipc_demo_1.0.apk)
+
+[![调用服务应用](https://img.shields.io/badge/downloads-1.5M-blue.svg)](https://github.com/xuexiangjys/XIPC/blob/master/apk/remote_demo_1.0.apk)
+
 ## 特征
 
 * 支持自定义服务接口实现进程通信，无需定义AIDL接口，所有IPC通信就像调用本地函数一样简单。
