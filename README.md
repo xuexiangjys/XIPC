@@ -253,6 +253,8 @@ XIPC.disconnect(getContext());
 
 * `@Background`和`@WeakRef`注解，必须在接口中对应的函数参数前进行添加。如果加在其他地方，将不会有任何作用。
 
+* 回调接口的方法请不要使用`@MethodName`注解修饰，否则会无法回调成功。
+
 ### 其他方面
 
 * 调用函数的时候，任何Context在另一个进程中都会变成对方进程的application context。
